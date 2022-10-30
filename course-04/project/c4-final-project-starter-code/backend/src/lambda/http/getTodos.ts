@@ -5,8 +5,6 @@ import { cors } from 'middy/middlewares'
 import { getUserId } from '../utils';
 import { getTodos } from '../../dataLayer/todosAcess'
 
-// import { getTodosForUser as getTodosForUser } from '../../businessLogic/todos'
-
 // TODO: Get all TODO items for a current user
 export const handler = middy(
   async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
