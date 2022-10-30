@@ -4,8 +4,6 @@ import * as middy from 'middy'
 import { cors, httpErrorHandler } from 'middy/middlewares'
 import { uploadId, uploadTodosId } from '../../dataLayer/todosAcess'
 import { getUploadUrl } from '../../businessLogic/attachmentUtils'
-// import { createAttachmentPresignedUrl } from '../../businessLogic/todos'
-// import { getUserId } from '../utils'
 
 const s3bucketName = process.env.ATTACHMENT_S3_BUCKET
 

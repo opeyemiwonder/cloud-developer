@@ -14,13 +14,11 @@ export const handler = middy(
     // TODO: Implement creating a new TODO item
     const todo = todoResolver(newTodo, event)
     await createTodo(todo)
-    // const createdTodo = await createTodo(todo)
 
     return {
       statusCode: 201,
       body: JSON.stringify({
         item: todo
-        // createdTodo
       })
     }
   }

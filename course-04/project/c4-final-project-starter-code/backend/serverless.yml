@@ -43,7 +43,6 @@ provider:
             - xray:PutTraceSegments
           Resource: "*"
 
-
 functions:
 
   Auth:
@@ -80,7 +79,7 @@ functions:
           reqValidatorName: RequestBodyValidator
           request:
             schemas:
-              application/json: ${file(models/create-todo-model.json)} 
+              application/json: ${file(models/create-todo-model.json)}
     iamRoleStatements:
       - Effect: Allow
         Action:
@@ -180,10 +179,11 @@ resources:
                 KeyType: RANGE
             Projection:
               ProjectionType: ALL # What attributes will be copied to an index
-    onlyBody:
-      Type: "AWS::ApiGateway::RequestValidator"
+    
+    RequestBodyValidator:
+      Type: AWS::ApiGateway::RequestValidator
       Properties:
-        Name: 'only-body'
+        Name: 'request-body-validator'
         RestApiId:
           Ref: ApiGatewayRestApi
         ValidateRequestBody: true
