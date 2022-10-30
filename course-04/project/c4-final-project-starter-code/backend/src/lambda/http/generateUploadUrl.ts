@@ -17,7 +17,6 @@ export const handler = middy(
     todo.attachmentUrl = `https://${s3bucketName}.s3.amazonaws.com/${todoId}`
 
     await uploadId(todo)
-
     const url = getUploadUrl(todoId)
     
     return {
